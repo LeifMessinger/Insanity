@@ -33,4 +33,7 @@
     details {
         padding-left: 0.5rem;
     }
+    b, summary {
+        font-size: 125%;
+    }
 </style>
