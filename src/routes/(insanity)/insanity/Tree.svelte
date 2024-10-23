@@ -1,27 +1,27 @@
-<script>
+<script lang="ts">
     import DesignerEditable from '$lib/insanity/designerEditable.svelte'
 
-    export let uniqueId
+    export let uniqueId: string[]
     export let root
 </script>
 
 <details>
     <summary>
-        {uniqueId == "" ? "Insanity" : uniqueId}
+        {(uniqueId.length === 0)? "Insanity" : uniqueId[uniqueId.length - 1]}
     </summary>
     {#if Object.keys(root).length >= 1}
         {#each Object.keys(root) as key}
             <!-- Svelte recursion ( ◕o◕) -->
             <svelte:self
                 root={root[key]}
-                uniqueId={key}
+                uniqueId={[...uniqueId, key]}
             />
         {/each}
     {:else}
-        <b>{uniqueId}</b>
+        <b>{uniqueId.join('/')}</b>
         <br />
-        <DesignerEditable {uniqueId}
-            >{uniqueId}</DesignerEditable
+        <DesignerEditable uniqueId={uniqueId.join('/')}
+            >{uniqueId.join('/')}</DesignerEditable
         >
     {/if}
 </details>

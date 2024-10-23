@@ -85,7 +85,7 @@
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                [uniqueId]: getTextStringFromElement(this),
+                [uniqueId]: getTextStringFromElement(this)?.replaceAll("<!---->", ""),
             }),
         })
 

@@ -56,7 +56,7 @@
 {#await uniqueIdsPromise}
     <p>Loading insanity</p>
 {:then uniqueIdsTree}
-    <Tree root={uniqueIdsTree} uniqueId={''}></Tree>
+    <Tree root={uniqueIdsTree} uniqueId={[]}></Tree>
 {:catch error}
     <p style="color: red">
         {error.message}

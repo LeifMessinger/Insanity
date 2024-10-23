@@ -1,3 +1,15 @@
 {
-	"index/Welcome": "Welcome to Svelte!"
+	"title": "Insanity",
+	"paragraphs/paragraph1/sentence1": "First, the edges blur. Reality becomes less certain, like a photograph slowly losing focus. You notice it in small ways: the way shadows seem to move when you're not looking directly at them, how time stretches and contracts like rubber bands.",
+	"paragraphs/paragraph1/sentence2": "The walls breathe. Or do they? You can't be sure anymore. Certainty itself becomes a distant memory, like trying to recall a dream within a dream.",
+	"quotes/quote1": "Reality is merely an illusion, albeit a very persistent one.\" - Albert Einstein",
+	"paragraphs/paragraph2/sentence1": "Your thoughts begin to spiral, each one connecting to a thousand others in ways that make perfect sense until you try to explain them. Patterns emerge everywhere - in the grain of wooden floors, in the way birds arrange themselves on telephone wires, in the random sequence of license plates passing by.",
+	"paragraphs/paragraph2/sentence2": "The connections grow stronger, more insistent. Every coincidence becomes meaningful, every random event part of an intricate design. The universe is trying to tell you something, but what?",
+	"paragraphs/paragraph3/sentence1": "Sleep becomes a foreign concept. Hours blur together like watercolors in the rain. You find yourself writing equations on windows, trying to calculate the exact frequency of silence. The mathematics of madness are beautiful in their complexity.",
+	"quotes/quote2": "\"There is a pleasure in being mad which none but madmen know.\" - John Dryden",
+	"paragraphs/paragraph4/sentence1": "Language itself begins to decompose. Words lose their meaning, become pure sound, pure rhythm. You create new combinations, a private vocabulary to describe the indescribable. The dictionary becomes a book of spells, each definition a gateway to another reality.",
+	"paragraphs/paragraph4/sentence2": "Colors taste different now. Sounds have texture. The boundaries between senses dissolve like sugar in hot tea. Is this what synesthesia feels like, or something else entirely?",
+	"paragraphs/paragraph5/sentence1": "But even in the depths of unreason, there remains a spark of awareness, a tiny observer watching the chaos unfold. It takes notes in the margins of reality, documenting the journey into the abstract.",
+	"quotes/quote3": "\"The distance between insanity and genius is measured only by success.\" - Bruce Feirstein",
+	"paragraphs/paragraph5/sentence2": "Perhaps this is not madness at all, but a different kind of sanity - one that sees through the thin veneer of order we've painted over the universe's fundamental chaos."
 }
