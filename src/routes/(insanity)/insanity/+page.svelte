@@ -56,7 +56,6 @@
 {#await uniqueIdsPromise}
     <p>Loading insanity</p>
 {:then uniqueIdsTree}
-    {JSON.stringify(uniqueIdsTree)}
     <Tree root={uniqueIdsTree} uniqueId={''}></Tree>
 {:catch error}
     <p style="color: red">
