@@ -1,8 +1,8 @@
 <script>
     import { base } from '$app/paths'
-    import { debug, init } from '$lib/designStore.js'
+    import { debug, init } from '$lib/Insanity/designStore.js'
     import { onMount } from 'svelte'
-    import DesignerEditable from '../../../lib/components/widgets/designerEditable.svelte'
+    import DesignerEditable from '$lib/Insanity/designerEditable.svelte'
 
     let nextChange = Promise.resolve({
         before: 'Try refreshing',
@@ -10,7 +10,7 @@
     })
 
     function getNextChange() {
-        nextChange = fetch(base + '/frontApi/design/change').then((data) =>
+        nextChange = fetch('/insanity/api/design/change').then((data) =>
             data.json()
         )
         return nextChange
@@ -19,7 +19,7 @@
     function changeDesign(event, uniqueId) {
         const newText = event.target.value
 
-        fetch('frontApi/design/edit', {
+        fetch('/insanity/api/design/edit', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -36,7 +36,7 @@
     function AcceptChange() {
         //I want the changeDesign to go through first, so putting a small timeout on this just in case.
         setTimeout(() => {
-            fetch('frontApi/design/change', {
+            fetch('/insanity/api/design/change', {
                 method: 'POST',
             })
         }, 100)
@@ -45,7 +45,7 @@
     function DeleteChange() {
         //I want the changeDesign to go through first, so putting a small timeout on this just in case.
         setTimeout(() => {
-            fetch('frontApi/design/change', {
+            fetch('/insanity/api/design/change', {
                 method: 'DELETE',
             })
         }, 100)
@@ -77,7 +77,7 @@
             {:else if change === true}
                 Gutters are cleaned! No more changes!
             {:else}
-                <table>
+                <table><tbody>
                     <tr>
                         <td>
                             <code>
@@ -148,7 +148,7 @@
                             >
                         </td>
                     </tr>
-                </table>
+                </tbody></table>
             {/if}
         {:catch error}
             <p style="color: red">{error.message}</p>

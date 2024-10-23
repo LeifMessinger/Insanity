@@ -2,7 +2,7 @@
     import { base } from '$app/paths'
     import Tree from './Tree.svelte'
 
-    import { updateSessionFields } from '$lib/helpers.js'
+    import { assignRecursively } from '$lib/Insanity/helpers.js'
     import { onMount } from 'svelte'
 
     function createNestedObject(keys) {
@@ -18,7 +18,7 @@
     function makeTreeFromPaths(paths) {
         const obj = {}
         for (let path of paths) {
-            updateSessionFields(obj, createNestedObject(path))
+            assignRecursively(obj, createNestedObject(path))
         }
 
         return obj
@@ -26,7 +26,7 @@
 
     let uniqueIdsPromise = Promise.resolve(['bruh'])
     onMount(() => {
-        uniqueIdsPromise = fetch('frontApi/design/text')
+        uniqueIdsPromise = fetch('/insanity/api/design/text')
             .then(
                 (res) => res.json(),
                 () => {
@@ -46,8 +46,8 @@
     })
 </script>
 
-<a href="{base}/insanityGutter">Clean the gutters!</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-    href="{base}/insanityGutter">Go Home</a
+<a href="{base}/insanity/GutterCleaner">Clean the gutters!</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+    href="/">Go Home</a
 >
 
 <br />
@@ -56,7 +56,8 @@
 {#await uniqueIdsPromise}
     <p>Loading insanity</p>
 {:then uniqueIdsTree}
-    <Tree root={uniqueIdsTree} uniqueId={'Lawbotics'}></Tree>
+    {JSON.stringify(uniqueIdsTree)}
+    <Tree root={uniqueIdsTree} uniqueId={''}></Tree>
 {:catch error}
     <p style="color: red">
         {error.message}

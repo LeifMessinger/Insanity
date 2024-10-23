@@ -37,7 +37,7 @@ export async function editJson(filePath: string, designEdits: Object) {
         }, onError)
 }
 
-//This isn't the static/assets, this is the lib/assets
+//Path to lib/server/Insanity
 export function absoluteFilePathAssets(fileName = 'designTextChanges.json') {
     const __filename = fileURLToPath(import.meta.url)
     const dirname = path.dirname(__filename)
@@ -52,7 +52,7 @@ export function absoluteFilePathAssets(fileName = 'designTextChanges.json') {
 			isBuilt(dirname)
             ? '../../../../src/lib/server/Insanity'	//This is probably wrong
             : '.',
-        'assets',
+        //'assets',
         fileName
     )
 }

@@ -1,16 +1,13 @@
 <script>
-    import DesignerEditable from '$lib/components/widgets/designerEditable.svelte'
+    import DesignerEditable from '$lib/insanity/designerEditable.svelte'
 
     export let uniqueId
     export let root
-    export let currentPath = ''
-    $: pathWithLawbotics = currentPath + '/' + uniqueId
-    $: pathId = pathWithLawbotics.substring('/Lawbotics/'.length)
 </script>
 
 <details>
     <summary>
-        {uniqueId}
+        {uniqueId == "" ? "Insanity" : uniqueId}
     </summary>
     {#if Object.keys(root).length >= 1}
         {#each Object.keys(root) as key}
@@ -18,14 +15,13 @@
             <svelte:self
                 root={root[key]}
                 uniqueId={key}
-                currentPath={pathWithLawbotics}
             />
         {/each}
     {:else}
-        <b>{pathId}</b>
+        <b>{uniqueId}</b>
         <br />
-        <DesignerEditable uniqueId={pathId}
-            >{pathWithLawbotics}</DesignerEditable
+        <DesignerEditable {uniqueId}
+            >{uniqueId}</DesignerEditable
         >
     {/if}
 </details>

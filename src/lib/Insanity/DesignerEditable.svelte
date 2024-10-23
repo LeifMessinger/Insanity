@@ -5,7 +5,7 @@
     let spanThingy = $state(false)
 
     async function updateText(debugVal) {
-        const awaitingText = fetch('frontApi/design/text').then(
+        const awaitingText = fetch('/insanity/api/design/text').then(
             (res) => res.json(),
             () => {
                 return {}
@@ -13,7 +13,7 @@
         )
 
         const awaitingChanges = debugVal
-            ? fetch('frontApi/design/changes').then(
+            ? fetch('/insanity/api/design/changes').then(
                   (res) => res.json(),
                   () => {
                       return {}
@@ -78,7 +78,7 @@
                 .trim()*/
         }
 
-        await fetch('frontApi/design/edit', {
+        await fetch('insanity/api/design/edit', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

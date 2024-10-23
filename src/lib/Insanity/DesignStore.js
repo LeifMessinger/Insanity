@@ -11,7 +11,7 @@ let initialized = false
 export async function init() {
     if (initialized) return debugVal
     initialized = true
-    return fetch(base + '/frontApi/design/edit').then(async (data) => {
+    return fetch(base + '/insanity/api/design/edit').then(async (data) => {
         const str = await data.text()
         //can log('debug data is', str)
         debug.set(str.trim() == 'true')
